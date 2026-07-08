@@ -1,36 +1,24 @@
 # Immune Gene Signature Classifier
 
-    Transcriptomics ML-style feature ranking for IFN-treated versus control samples.
+Upgraded to include a public interferon-signature reference set and explicit overlap analysis. The expression matrix is still synthetic, so this is not yet a full public RNA-seq analysis, but the biological validation layer now uses public canonical IFN alpha/gamma response genes.
 
-    ## Dataset
+## Reproduce
 
-    Synthetic IFN-stimulation expression matrix using canonical public ISG names.
+```bash
+python scripts/run_pipeline.py
+```
 
-    ## Methods
+## Outputs
 
-    - DEG-style log2FC ranking
-- Known ISG annotation
-- ML feature-importance comparison scaffold
-
-    ## Reproduce
-
-    ```bash
-    python scripts/run_pipeline.py
-    ```
-
-    ## Outputs
-
-    - `data/expression_log2.csv`
+- `data/expression_log2.csv`
+- `data/public_ifn_signature_genes.csv`
 - `outputs/gene_signature_ranking.csv`
 - `figures/top_signature_genes.svg`
 
-    ## Analysis Report
+## Analysis Report
 
-    Open `reports/analysis_report.html` for the full hypothesis, data provenance,
-    process, outputs, and interpretation narrative.
+Open `reports/analysis_report.html` for the hypothesis, public data provenance, process, outputs, and interpretation.
 
-    ## Portfolio Note
+## Portfolio Note
 
-    This repository uses public or synthetic demonstration data only. It is
-    intended to show reproducible computational biology and AI/ML workflow
-    design without relying on confidential or employer-owned material.
+This repository uses public data sources or clearly labelled synthetic demonstration data only. No employer-owned or confidential data are included.

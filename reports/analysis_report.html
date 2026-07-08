@@ -1,34 +1,15 @@
 <!doctype html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Immune Gene Signature Classifier - Analysis Report</title>
-      <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.55; color: #17202a; max-width: 980px; }
-        h1 { margin-bottom: 0; }
-        .subtitle { color: #5d6d7e; margin-top: 6px; }
-        section { border-top: 1px solid #d8dee4; padding-top: 18px; margin-top: 24px; }
-        code { background: #f6f8fa; padding: 2px 5px; border-radius: 4px; }
-        figure { margin: 24px 0; }
-        img { max-width: 100%; border: 1px solid #d8dee4; }
-        figcaption { color: #5d6d7e; font-size: 0.92rem; margin-top: 6px; }
-      </style>
-    </head>
-    <body>
-      <h1>Immune Gene Signature Classifier</h1>
-      <p class="subtitle">Bench to Bytes portfolio analysis report. Uses only public or synthetic data.</p>
-      <section><h2>Hypothesis</h2><p>IFN-treated samples should be distinguishable by a compact gene signature enriched for canonical interferon-stimulated genes.</p></section>
-      <section><h2>Data</h2><p>Synthetic IFN-stimulation expression matrix using canonical public ISG symbols such as MX1, IFIT1, ISG15, OAS1, STAT1, and IRF7.</p></section>
-      <section><h2>Process</h2><ol><li>Generated control and IFN-treated expression profiles.</li>
-<li>Computed treated-control log2 fold-change for each gene.</li>
-<li>Annotated known ISGs and ranked features by effect magnitude.</li>
-<li>Plotted the top signature genes with clear labels.</li></ol></section>
-      <section><h2>Outputs</h2><ul><li><code>data/expression_log2.csv</code></li>
-<li><code>data/sample_metadata.csv</code></li>
-<li><code>outputs/gene_signature_ranking.csv</code></li>
-<li><code>figures/top_signature_genes.svg</code></li></ul></section>
-      <section><h2>Interpretation</h2><p>The ranking recovers several canonical ISGs while also showing non-canonical synthetic features, matching the real-world task of separating known biology from model-suggested candidates.</p></section>
-      <section><h2>Figures</h2><figure><img src="../figures/top_signature_genes.svg" alt="figures/top_signature_genes.svg"><figcaption>figures/top_signature_genes.svg</figcaption></figure></section>
-    </body>
-    </html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immune Gene Signature Classifier - Analysis Report</title>
+<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.55;color:#17202a;max-width:980px}.subtitle{color:#5d6d7e}section{border-top:1px solid #d8dee4;padding-top:18px;margin-top:24px}code{background:#f6f8fa;padding:2px 5px;border-radius:4px}img{max-width:100%;border:1px solid #d8dee4}figcaption{color:#5d6d7e;font-size:.92rem}</style></head>
+<body><h1>Immune Gene Signature Classifier</h1><p class="subtitle">Bench to Bytes portfolio analysis report. Public data sources are named explicitly.</p>
+<section><h2>Hypothesis</h2><p>A credible IFN classifier should validate selected genes against public canonical interferon-response signatures.</p></section>
+<section><h2>Data</h2><p>Synthetic IFN expression matrix plus public canonical IFN alpha/gamma response gene symbols used as an external biological validation set.</p></section>
+<section><h2>Process</h2><ol><li>Added a public IFN signature reference table.</li>
+<li>Merged ranked genes with public IFN alpha/gamma membership.</li>
+<li>Replaced the figure with a top-25 overlap summary.</li>
+<li>Reframed the repo as partially public-validated, not fully public RNA-seq.</li></ol></section>
+<section><h2>Outputs</h2><ul><li><code>data/public_ifn_signature_genes.csv</code></li>
+<li><code>outputs/gene_signature_ranking.csv</code></li></ul></section>
+<section><h2>Interpretation</h2><p>The project is more honest and biologically grounded. The next real upgrade is still a true GEO/DEE2 IFN-treated RNA-seq dataset.</p></section>
+<section><h2>Figures</h2><figure><img src="../figures/top_signature_genes.svg" alt="figures/top_signature_genes.svg"><figcaption>figures/top_signature_genes.svg</figcaption></figure></section></body></html>
